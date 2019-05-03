@@ -1,0 +1,72 @@
+.main-signup {
+    padding: 4rem 1rem;
+}
+
+.main-signup__container {
+    display: grid;
+    grid-template-columns: minmax(auto, 37rem);
+    grid-template-rows: repeat(6, auto);
+    grid-gap: 1rem 0;
+    justify-content: center;
+}
+
+.main-signup__input {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+
+    &--message label {
+        align-self: start;
+    }
+    
+    &--newsletter {
+        grid-template-columns: 7rem auto;
+    }
+
+    &--terms .main-signup__checkbox {
+        grid-column: 1 / -1;
+        justify-self: center;
+
+        a:link,
+        a:visited {
+            border-bottom: 1px solid blue;
+        }
+
+        a:hover,
+        a:active {
+            color: #555;
+            border-bottom: 1px solid transparent;
+        }
+    }
+
+    .main-signup__checkbox{
+        display: flex;
+        align-items: center;
+
+        input {
+            margin-right: 1rem;
+        }
+    }
+
+    label {
+        grid-column: 1 / span 1;
+    }
+
+    input,
+    select,
+    textarea {
+        font: inherit;
+        padding: .5rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+}
+
+.main-signup__submit {
+    justify-self: center;
+    
+    input {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,111 @@
+.main-customers__container {
+    display: grid;
+    padding: 1rem 0;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+}
+
+.main-customer {
+    display: grid;
+    margin: 2rem 0;
+    grid-template-columns: minmax(20rem, 94rem);    
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+
+    &--1 {
+        .main-customer__img-container {
+            grid-row: 1 / span 1;
+        }
+
+        .main-customer__info {
+            grid-row: 2 / span 1;
+        }
+    }
+
+    &--2 {
+        .main-customer__img-container {
+            grid-row: 2 / span 1;
+        }
+
+        .main-customer__info {
+            grid-row: 1 / span 1;
+            text-align: right;
+        }
+    }
+
+    &__img-container {
+        .main-customer__img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        margin: 1rem;
+        font-size: 1.7rem;
+        color: black;
+    }
+
+    &__name {
+        font-size: 2.5rem;
+        color: $color-primary-dark;
+    }
+
+    &__detail {
+        color: #555;
+        margin-bottom: 1rem;
+
+        a:link,
+        a:visited {
+            color: #555;
+            border-bottom: 1px solid #333;
+        }
+
+        a:hover,
+        a:active {
+            color: #333;
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
+@include respond(tab-port) {
+    .main-customers__container {
+        padding: 2rem 0;
+    }
+
+    .main-customer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+
+        &--1 {
+            .main-customer__img-container {
+                grid-column: 1 / span 1;
+            }
+    
+            .main-customer__info {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+            }
+        }
+    
+        &--2 {
+            .main-customer__img-container {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+            }
+    
+            .main-customer__info {
+                grid-column: 1 / span 1;
+                text-align: right;
+            }
+        }
+    }
+}
+
+@include respond(desktop) {
+    .main-customer {
+        max-width: 1200px;
+    }
+}

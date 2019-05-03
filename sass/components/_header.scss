@@ -1,0 +1,64 @@
+.main-header {
+    display: grid;
+    padding: .5rem 4rem;
+    grid-template-columns: 4rem auto;
+    background-color: black;
+    
+    &__brand {
+        height: 3rem;
+        border: 0;
+        grid-column: 1 / span 1;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .main-nav {
+        display: none;
+    }
+}
+
+@include respond(tab-port) {
+    .main-header .main-nav {
+        display: block;
+        font-size: .8rem;
+        grid-column: 2 / span 1;
+        justify-self: right;
+        align-self: center;
+            
+        &__items {
+            display: flex;
+            list-style: none;
+        }
+
+        &__item {
+            a:link,
+            a:visited {
+                text-transform: uppercase;
+                margin-left: 1.5rem;
+                padding: .5rem 0;
+                color: white;
+                border-bottom: 1px solid transparent;
+            }
+        
+            a:hover,
+            a:active {
+                border-bottom: 1px solid $color-primary-dark;
+            }
+
+            &--cta a:link,
+            &--cta a:visited {
+                padding: .5rem 1rem;
+                border-radius: .5rem;
+                background-color: transparent;
+                border: 1px solid $color-primary-dark;
+            }
+
+            &--cta a:hover,
+            &--cta a:active {
+                background-color: $color-primary-dark;
+            }
+        }
+    }  
+}

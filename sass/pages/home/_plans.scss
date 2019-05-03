@@ -1,0 +1,92 @@
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: minmax(18rem, 100%);
+    grid-gap: 2rem;
+    justify-content: center;
+}
+
+.plan {
+    & > div {
+        padding: 1rem;
+    }
+
+    &--recommended {
+        .plan__details {
+            border: 1px solid $color-primary;
+            border-bottom-width: 0px;
+        }
+
+        .plan__features {
+            border-left-width: 1px;
+            border-right-width: 1px;
+            border-style: solid;
+            border-left-color: $color-primary;
+            border-right-color: $color-primary;
+        }
+
+        .plan__cta {
+            border: 1px solid $color-primary;
+            border-top-width: 0px;
+        }
+    }
+
+    &__details {
+        text-align: center;
+        background-color: #fcfcfc;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        .plan__price {
+            color: $color-primary;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+
+            span {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__features {
+        background-color: white;
+        border-bottom: 1px solid #e8e8e8;
+        border-top: 1px solid #e8e8e8;
+
+
+        & li {
+            display: flex;
+            list-style: none;
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            padding: 1rem 0;
+        }
+    }
+
+    &__cta {
+        background-color: white;
+        text-align: center;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+@include respond(tab-port) {
+    .plans-container {
+        grid-template-columns: repeat(3, minmax(18rem, 25rem));
+    }
+
+    .plan {
+        &__details {
+            text-align: left;
+        }
+
+        &__features li {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-primary;
+    padding: 10px 30px;
+    font: inherit;
+    border: 1px solid $color-primary;
+    border-radius: 200px;
+    transition: all .2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: $color-primary;
+    color: white;
+    margin-right: 1rem;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color: $color-primary;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: $color-primary-dark;
+    border: 1px solid $color-primary-dark;
+    color: white;
+}

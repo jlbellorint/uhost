@@ -1,0 +1,48 @@
+.section-features {
+    background-color: $color-primary-dark;
+
+    h2 {
+        color: white;
+    }
+
+    .features-container {
+        display: grid;
+        grid-template-columns: minmax(15rem, 20rem);
+        grid-template-rows: repeat(3, auto);
+        grid-gap: 3rem;
+        justify-items: center;
+        justify-content: center;
+    }
+
+    .feature {
+        &__img {
+            display: flex;
+            height: 13rem;
+            width: 13rem;
+            background-color: $color-primary-light;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg {
+            height: 60%;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: white;
+            text-align: center;
+        }
+    }
+}
+
+@include respond(tab-port) {
+    .section-features .features-container {
+        grid-template-columns: repeat(3, minmax(15rem, 20rem));
+        grid-template-rows: auto;
+    }
+}
